@@ -1,0 +1,229 @@
+<!-- Convert pug into HMTL: https://codebeautify.org/pug-to-html-converter -->
+<!-- <const>pug = require('pug');</const> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <title>Timeline-JS</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet"> -->
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/cerulean/bootstrap.min.css " rel="stylesheet">
+        <!-- Bootstrap Theme -->
+        <link href="/css/bootstrap.css" rel="stylesheet" >
+
+        <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+
+    </head>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-info" href="#">Timeline</a>
+        <form class="d-flex">
+          <!-- <p>Example data  </p> -->
+          <button type="button" class="btn btn-outline-dark show&input" onclick="showTimeline(0,3)&inputExampleData()">
+            <img src="/assets/icons/eye-removebg-preview.png" alt="quotes" width="20" height="20" />
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+              <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+              <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+            </svg> -->
+          </button>
+          <!-- <button type="button" class="btn btn-outline-primary show&input" onclick="getElementId2()">
+            T
+          </button> -->
+          <button type="button" class="btn btn-outline-dark clear" onclick="clearAllData()">
+            <img src="/assets/icons/eye_1_-removebg-preview.png" alt="quotes" width="20" height="20" />
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <body>
+
+      <!-- TIMELINE WITH FILTERS -->
+      <div class="container">
+        <div class="timeline-wrapper">
+          <div class="timeline" id="timeline">
+            <!-- <div class="event">
+              <span class="close">&times;</span>
+              <h5 id="timelineEventTitle"></h5>
+              <p id="timelineEventStartDate"></p>
+              <p id="timelineDescription"></p>
+            </div> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-right">
+            <button type="button" class="btn btn-outline-dark prev" onclick="prevData()">
+              <img src="/assets/icons/arrowhead-right-removebg-preview.png" alt="quotes" width="40" height="40" />
+            </button>
+          </div>
+          <div class="col text-end">
+            <button type="button" class="btn btn-outline-dark next" onclick="nextData()">
+              <img src="/assets/icons/arrowhead-left-removebg-preview.png" alt="quotes" width="40" height="40" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />              
+            
+
+      <!-- LIST OF EVENTS -->
+      <!-- ADD EVENT -->
+      <div class="container text-info">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />   
+        <br />   
+        <br />   
+        <br />
+        <br />
+
+        <div class="form-group"> 
+
+          <div class="row">
+            <h3>Create your own event</h3>
+          </div>
+          
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control bg-color-dark" id="eventInput" placeholder="Enter event title" required>
+            <label for="eventInput">Event *</label>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="categoryInput" placeholder="Enter category event">
+                <label for="categoryInput">Category</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="linkInput" placeholder="Enter link" required>
+                <label for="linkInput">Link</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="date" class="form-control text-info" id="startDateInput" placeholder="Enter event start date" required>
+                <label for="startDateInput" class="text-info">Start date *</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="date" class="form-control text-info" id="endDateInput" placeholder="Enter event end date">
+                <label for="endDateInput" class="text-info">End date</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <textarea class="form-control" id="descriptionInput" placeholder="Event description" rows="3"></textarea>
+            <label for="descriptionInput"></label>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button type="button" class="btn btn-outline-dark add" onclick="addData()"> 
+              <img src="/assets/icons/plus-removebg-preview.png" alt="quotes" width="30" height="30" />
+            </button> 
+
+            <button type="button" class="btn btn-outline-dark clear" onclick="clearInputs()">
+              <img src="/assets/icons/update-removebg-preview.png" alt="quotes" width="30" height="30" />
+            </button>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />   
+
+        </div>
+      </div>
+
+      <div class="container text-info">
+        <!-- VIEW TABEL OF EVENTS-->
+        <div class="row">
+          <h3>Table of events</h3>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="startDateSearchInput" onkeyup="filterFunction(4)" placeholder="">
+              <label for="startDateSearchInput">Search by start date</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="endDateSearchInput" onkeyup="filterFunction(5)" placeholder="">
+              <label for="endDateSearchInput">Search by end date</label>
+            </div>
+          </div>
+        </div>
+          
+        <table class="table table-hover" id="outputTable"> 
+          <thead>
+            <tr> 
+              <th onclick="sortTable(0)" scope="col" width="50rem">
+                # 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </th>
+              <th onclick="sortTable(1)" scope="col">
+                Event
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </th>
+              <th onclick="sortTable(2)" scope="col">
+                Description
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </th>
+              <th onclick="sortTable(3)" scope="col">
+                Category
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </th>
+              <th onclick="sortTable(4)" scope="col" width="120rem">
+                Start date
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </th>
+              <th onclick="sortTable(5)" scope="col" width="120rem">
+                End date
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                  <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+              </th>
+              <th scope="col">Link</th>
+              <th scope="col" width="120rem">Action</th>
+            </tr> 
+          </thead>
+        </table> 
+        <br />
+        <br />
+        <br />
+      </div>
+
+      <script src="/js/app.js"></script>
+      <script src="/js/sort-table.js"></script>
+      <script src="/js/filter-table.js"></script>
+      <script src="/js/example-data.js"></script>
+
+    </body>
+
+</html>
+
