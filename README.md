@@ -40,7 +40,7 @@ Exmaple data are in the project in file example-data.js
 To see sample data contained in the application, simply press the button located in the upper right corner of the application
 
 ### Run the app
-Download files from githube from this repo
+Download files from github
 ```
 git clone https://github.com/Susannnnnna/JS_Timeline
 ```
