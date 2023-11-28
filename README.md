@@ -1,8 +1,10 @@
-![Application image - main page](./assets/images/timeline_on.png)
-
 # Timeline - JavaScript
+![Application image - main page](./assets/images/timeline_on.png)
+![Application image - main page](./assets/images/timeline_off.png)
+
 ## About
-Timeline is a simple web application where you can use sample data included in the project.
+Timeline is a simple single-page application where you can use sample data included in the project.
+
 You can add your own events (created events are only visible in the table). 
 
 ## Content
@@ -21,7 +23,10 @@ You can add your own events (created events are only visible in the table).
 - [Creation time](./README.md#creation-time)
 
 ## App examples
-Examples of use - short demo or screen
+![Application image - main page](./assets/images/timeline_form.png)
+![Application image - main page](./assets/images/timeline_form_validation.png)
+![Application image - main page](./assets/images/timeline_example_events.png)
+![Application image - main page](./assets/images/timeline_created_events.png)
 
 ## How to run the app?
 ### Environment
