@@ -1,5 +1,6 @@
 # Timeline - JavaScript
 ![Application image - main page](./assets/images/timeline_on.png)
+
 ![Application image - main page](./assets/images/timeline_off.png)
 
 ## About
@@ -19,8 +20,11 @@ You can add your own events (created events are only visible in the table).
 
 ## App examples
 ![Application image - main page](./assets/images/timeline_form.png)
+
 ![Application image - main page](./assets/images/timeline_form_validation.png)
+
 ![Application image - main page](./assets/images/timeline_example_events.png)
+
 ![Application image - main page](./assets/images/timeline_created_events.png)
 
 ## How to run the app?
@@ -44,6 +48,8 @@ Download files from github
 ```
 git clone https://github.com/Susannnnnna/JS_Timeline
 ```
+
+Open downloaded files in IDE (like VSCode) and run the app locally
 
 ## Sources
 
