@@ -1,8 +1,6 @@
 # Timeline - JavaScript
 ![Application image - main page](./assets/images/timeline_on.png)
 
-![Application image - main page](./assets/images/timeline_off.png)
-
 ## About
 Timeline is a simple single-page application where you can use sample data included in the project.
 
@@ -13,7 +11,7 @@ You can add your own events (created events are only visible in the table).
 - [How to run the app?](./README.md#how-to-run-the-app)
   - [Environment](./README.md#environment)
   - [Used technologies](./README.md#used-technologies)
-  - [Database](./README.md#database)
+  - [Data](./README.md#data)
   - [Run the app](./README.md#run-the-app)
 - [Sources](./README.md#sources)
 - [Note](./README.md#note)
@@ -38,7 +36,7 @@ You can add your own events (created events are only visible in the table).
 - CSS
 - JavaScript
 
-### Database
+### Data
 Exmaple data are in the project in file example-data.js
 
 To see sample data contained in the application, simply press the button located in the upper right corner of the application
