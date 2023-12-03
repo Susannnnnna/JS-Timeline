@@ -53,4 +53,4 @@ Open downloaded files in IDE (like VSCode) and run the app locally
 
 
 ## Note
-
+The data visible on the timeline are downloaded from events available on the website: https://www.neuronaukowiec.com
